@@ -1,6 +1,7 @@
 
-import requests
 import re
+import requests
+import sys
 from bs4 import BeautifulSoup
 
 class AmazonAggregator:
@@ -57,11 +58,11 @@ class AmazonAggregator:
 
     def log_data(self, data_str=None, data_list=None):
         if data_str:
-            with open(self.data_file, 'a') as f:
+            with open(self.data_file, mode='a', encoding='utf-8') as f:
                 f.write(data_str)
                 f.write('\n')
         elif data_list:
-            with open(self.data_file, 'a') as f:
+            with open(self.data_file, mode='a', encoding='utf-8') as f:
                 for data in data_list:
                     f.write(data)
                     f.write('\n')
