@@ -1,5 +1,5 @@
 
-import aggregators/youtube
-import aggregators/amazon
+import aggregators.youtube
+import aggregators.amazon
 
 
