@@ -19,7 +19,6 @@ class AmazonAggregator:
         self.review_date_regex = re.compile(r'<[^>]+>([\w\d\s,]+).*')
         self.review_message_regex = re.compile(r'<[^>]+><[^>]+>(.*)<\/span>[\s\S]*')
 
-        #self.http_header ={'User-Agent':'Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0 '}
         self.http_header = {'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1'}
 
     def get_from_url(self, url):
@@ -40,7 +39,7 @@ class AmazonAggregator:
 
         review_data = []
         page_info = ['0', '1']
-        #page_info[1]
+        
         while page_info[0] != page_info[1] and url_params['pageNumber'] <= 500:
             r = requests.get(formatted_url, params=url_params,headers=self.http_header)
             if r.status_code == 200:
@@ -62,7 +61,7 @@ class AmazonAggregator:
                     review_data.append(self.format_str.format(date, product, seller, title, stars, message, link))
 
                 f = str(soup.find(attrs={'data-hook':'cr-filter-info-review-count'}))
-                print(f)
+                
                 page_info = self.review_page_regex.match(f).groups()
                 url_params['pageNumber'] += 1
         
