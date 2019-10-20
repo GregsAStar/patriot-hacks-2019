@@ -7,6 +7,9 @@ This project is written in python and the data produced is meant to be onboarded
 
 We decided to undertake the task of creating a database that can easily record product listings and their reviews. In our demo we wrote a scraper to gather data from Amazon, however the process is applicable to other sources. The purpose of this product is to create a system where a user only needs to input a product listing in order to obtain user experience data from customer reviews.
 
+# Structure
+The `src` directory contains the source code for the web scraper.
+The `media` directory contains screenshots of our work and a presentation about our solution.
 
 # Dependencies
 This project depends on the following packages not included with python:
