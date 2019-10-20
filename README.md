@@ -7,6 +7,9 @@ This project is written in python and the data produced is meant to be onboarded
 
 # Dependencies
 This project depends on the following packages not included with python:
+
 `requests` -- For making HTTP requests to collect HTML data from Amazon.
+
 `beautifulsoup4` -- For parsing the collected HTML data.
+
 `fake_useragent` -- So Amazon doesn't stop us from making automated requests (again) :)
